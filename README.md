@@ -1,6 +1,6 @@
 # Suffer Mental Health Care System 🧠 🧑‍⚕️
 
-## Introduction 
+## Introduction ➕
 
 Suffer is used most often when talking about dealing with a mental or physical condition for a long time. 
 
@@ -10,7 +10,7 @@ Our Application brings you the best platform where you not only find the best co
 ## Screenshots 
 
 
-### Mobile Application 
+### Mobile Application 📱
 <br><br>
 
 
@@ -27,7 +27,7 @@ Our Application brings you the best platform where you not only find the best co
 
 <br><br>
 
-### Web Application 
+### Web Application 🌏
 <br>
 
 
@@ -55,7 +55,7 @@ Our Application brings you the best platform where you not only find the best co
 
 
 
-## Technologies Used 
+## Technologies Used 🧑‍💻
 1. HTML
 2. CSS
 3. JS
