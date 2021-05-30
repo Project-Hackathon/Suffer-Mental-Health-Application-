@@ -1,0 +1,601 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>The Healthy Mind</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="{% static 'healthymind/img/favicon.png' %}" rel="icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="{% static 'healthymind/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'healthymind/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{% url 'index' %}">The Healthy Mind</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'blogs' %}">Blogs</a></li>
+          {% if user.is_authenticated %}
+               <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a class="nav-link scrollto" href="{% url 'login' %}">Login/Sign Up</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>The Healthy Mind</span></h2>
+          <p class="animate__animated fanimate__adeInUp">The Health Mind brings you the best platform where you not only find the best consultancy for all your problems by best-trained and renowned counselors but also a community to help and develop with all your mates.</p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section>
+
+  <main id="main">
+
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>About</h2>
+          <p>Who we are</p>
+        </div>
+
+        <div class="row content" data-aos="fade-up">
+          <div class="col-lg-6">
+            <p>
+              We at Healthy Mind will provide all the requirements which one individual needs when he/she is psychologically ill.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Provide awareness by reading short articles written by experienced people.</li>
+              <li><i class="ri-check-double-line"></i> Weekly Online Assessment to know mental state and improvement.</li>
+              <li><i class="ri-check-double-line"></i> We'll take care of your privacy.</li>
+              <li><i class="ri-check-double-line"></i> Complete Guidance by the trained and renowned psychiatrist at your doorstep online.</li>
+              <li><i class="ri-check-double-line"></i> Will give you the best-suited environment to grow and develop from all your problems with people having similar problems. </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <img src="{% static 'healthymind/img/doctor.jpg' %}" alt="" class="img-fluid">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="tab-content" data-aos="fade-up">
+           <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 text-center">
+                <img src="{% static 'healthymind/img/mental.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 mt-3 mt-lg-0">
+                <h3>Some Severe facts avout Mental Health...</h3>
+                <p class="fst-italic">
+                  Happiness can be found even in the darkest of times, if one only remembers to turn on the light.
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> In 2015, on a global level, over 322.48 million people worldwide suffer from some form of depressive disorder and as of 2017, more than 14 percent of the total population in India suffers from variations of mental disorders. </li>
+                  <li><i class="ri-check-double-line"></i> In India, every seventh person suffers from some form of mental disorder.</li>
+                  <li><i class="ri-check-double-line"></i> WHO also estimates that, in India, the economic loss, due to mental health conditions, between 2012-2030, is 1.03 trillions of 2010 dollars.</li>
+                </ul>
+              </div>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-out">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Never ever hesitate to ask for help</h3>
+            <p> Never hesitate to ask for help or seek professional guidance when you are in pain. Sometimes this positive approach will help to recover faster and help the counselor to understand our problem.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="/Selecao/login.html">Call To Action</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Best Therapist</h2>
+          <p>At our service</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box" data-aos="zoom-in-left">
+              <div class="icon"><i class="bi bi-card-image" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Darpan Sood</a></h4>
+              <p class="description">5 yrs exp<br/>B.A., M.A., M.Phil</br>Counseling starting at 750 INR</p>
+              <br/>
+              <div class="text-center">
+              <button type="button" class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
+              <div class="icon"><i class="bi bi-card-image" style="color: #e9bf06;"></i></div>
+              <h4 class="title"><a href="">Aakesh Aggarwal</a></h4>
+              <p class="description">8 yrs exp<br/>B.A., M.A., M.Phil</br>Counseling starting at 1000 INR</p>
+              <br/>
+              <div class="text-center">
+              <button type="button" class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
+              <div class="icon"><i class="bi bi-card-image" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Tejaswini Singh</a></h4>
+              <p class="description">12 yrs exp<br/>B.A., M.A., M.Phil</br>Counseling starting at 1500 INR</p>
+              <br/>
+              <div class="text-center">
+              <button type="button" class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box" data-aos="zoom-in-left">
+              <div class="icon"><i class="bi bi-card-image" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Mahima Gaur</a></h4>
+              <p class="description">5 yrs exp<br/>B.A., M.A., M.Phil</br>Counseling starting at 750 INR</p>
+              <br/>
+              <div class="text-center">
+              <button type="button" class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
+              <div class="icon"><i class="bi bi-card-image" style="color: #e9bf06;"></i></div>
+              <h4 class="title"><a href="">Amar Saxena</a></h4>
+              <p class="description">8 yrs exp<br/>B.A., M.A., M.Phil</br>Counseling starting at 1000 INR</p>
+              <br/>
+              <div class="text-center">
+              <button type="button" class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
+              <div class="icon"><i class="bi bi-card-image" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Harmanpreet Singh</a></h4>
+              <p class="description">12 yrs exp<br/>B.A., M.A., M.Phil</br>Counseling starting at 1500 INR</p>
+              <br/>
+              <div class="text-center">
+              <button type="button" class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Services</h2>
+          <p>What we do offer</p>
+        </div>
+
+        <div class="row content" data-aos="fade-up">
+          <div class="col-lg-6">
+            <p>
+              A chatbot is a computer program that simulates human conversation through voice commands or text chats or both. Chatbot, short for chatterbot, is an artificial intelligence (AI) feature that can be embedded and used through any major messaging applications.
+            </p>
+            <p>
+              Through the feature, you can talk to our intelligent chatbot whenever you feel you need urgent support. This Bot will ask certain predefined questions and you have to answer in some predefined format.
+            </p>
+            <p>
+              This ChatBot will analyze your disorder level by your answer keywords and will divide you into groups so that we can have regular meetups and can know and share each other's problems.
+            </p>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <img src="{% static 'healthymind/img/chatbot.jpeg' %}" alt="" class="img-fluid">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Testimonials</h2>
+          <p>What they are saying about us</p>
+        </div>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'healthymind/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'healthymind/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'healthymind/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'healthymind/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'healthymind/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What causes depression? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                There are lots of reasons why someone might feel depressed, but sometimes there isn’t any obvious reason. It can be caused by a difficult life event.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">How can I tell if someone has a mental health problem? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                If someone has bipolar disorder, they may show significant mood swings, or appear more withdrawn if they are dealing with self-harm or negative thoughts.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">How can I speak to and help someone with a mental health problem like depression or anxiety? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Encourage them to seek help, Don’t be afraid to bring it up, Don’t blame them, Be patient and Look after yourself.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">What do I do if it is an emergency? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                It’s essential that services are able to respond when people reach out; from early treatment to help people manage their mental health problems as soon as possible.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">What is a personality disorder? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                The word ‘personality’ refers to the pattern of thoughts, feelings and behaviour that makes each of us the individuals that we are. These affect the way we think, feel and behave towards others and ourselves.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">What is post-traumatic stress disorder (PTSD)? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                The term PTSD is used to describe a range of psychological symptoms, which can follow traumatic events. PTSD can be triggered by anything that consciously, or unconsciously, reminds an individual of a specific trauma in their lives.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Team</h2>
+          <p>Our Hardworking Team</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="{% static 'healthymind/img/team/Sanidhiya.jpg' %}" class="img-fluid" alt="" width="350" height="350">
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sanidhiya</h4>
+                <span>Co Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{% static 'healthymind/img/team/Archit.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Archit Kapoor</h4>
+                <span>Co Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{% static 'healthymind/img/team/Nitish.jpeg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Nitish Garg</h4>
+                <span>Co Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="{% static 'healthymind/img/team/Saurabhk.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Saurabh K. Sah</h4>
+                <span>Co Founder</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>The Wrecking Balls Headquarter, New Delhi, India</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>wreckingballs@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 98765-43210</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+            <form   class="php-email-form">
+              <div id="alerts"></div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" id="message" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit" onclick="submitcontactform()">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <h3>The Healthy Mind</h3>
+      <p>Happiness can be found even in the darkest of times, if one only remembers to turn on the light.</p>
+      <div class="copyright">
+        &copy; Copyright <strong><span>The Healthy Mind</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by The Wrecking Balls</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'healthymind/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'healthymind/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'healthymind/vendor/glightbox/js/glightbox.min.js' %}" ></script>
+  <script src="{% static 'healthymind/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'healthymind/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'healthymind/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script src="{% static 'healthymind/js/main.js' %}"></script>
+  <script src="{% static 'healthymind/script3.js' %}"></script>
+
+</body>
+
+</html>
